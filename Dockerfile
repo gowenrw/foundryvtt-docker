@@ -70,6 +70,7 @@ LABEL org.opencontainers.image.vendor="Geekpad"
 
 ENV FOUNDRY_VERSION=${FOUNDRY_VERSION}
 ENV HOME=/home/node
+ENV CONTAINER_PRESERVE_CONFIG=true
 
 WORKDIR $HOME
 
