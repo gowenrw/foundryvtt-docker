@@ -76,6 +76,7 @@ docker run \
 
 # My Build
 
+Build including foundry software
 ```console
 docker buildx build \
   --output type=docker \
@@ -83,9 +84,16 @@ docker buildx build \
   --tag altbier/waterdeep-foundryvtt:13.351.1 .
 ```
 
-  --build-arg CONTAINER_PRESERVE_CONFIG=true \
-  --build-arg FOUNDRY_HOSTNAME='waterdeep.altbier.us' \
+Build without foundry software, when using CONTAINER_CACHE at runtime
+```console
+docker buildx build \
+  --output type=docker \
+  --tag altbier/waterdeep-foundryvtt:13.351.2 .
+```
 
+  --build-arg CONTAINER_PRESERVE_CONFIG=true \ <- doesnt work, var only works at run time
+  --build-arg FOUNDRY_HOSTNAME='waterdeep.altbier.us' \
+  --build-arg CONTAINER_CACHE='/data/container_cache' \ <- doesnt work, var only works at run time
 
 
 # My Run

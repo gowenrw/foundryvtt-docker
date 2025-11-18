@@ -1,9 +1,9 @@
 ---
 name: altbier-tst
-version: '13.351.1'
+# version: '13.351.2'
 services:
   waterdeep:
-    image: altbier/waterdeep-foundryvtt:13.351.1
+    image: altbier/waterdeep-foundryvtt:13.351.2
     container_name: waterdeepvtt
     hostname: waterdeepvtt
     ports:
@@ -13,12 +13,13 @@ services:
         mode: host
     volumes:
       - type: bind
-        source: /c/Users/richa//OneDrive/games/waterdeep_adventures/altbier_vtt_data/vtt_data
+        source: /c/Users/richa/OneDrive/games/waterdeep_adventures/altbier_vtt_data/vtt_data
         target: /data
       # - type: bind
-      #   source: /c/Users/richa//OneDrive/games/waterdeep_adventures/altbier_vtt_data/backup
+      #   source: /c/Users/richa/OneDrive/games/waterdeep_adventures/altbier_vtt_data/backup
       #   target: /backup
     environment:
+      - CONTAINER_CACHE=/data/container_cache
       - FOUNDRY_HOSTNAME=waterdeep.altbier.us
       # Note I set ENV CONTAINER_PRESERVE_CONFIG=true in the Dockerfile, here as a backup
       - CONTAINER_PRESERVE_CONFIG=true
