@@ -13,7 +13,8 @@ services:
         mode: host
     volumes:
       - type: bind
-        source: /c/Users/richa/OneDrive/games/waterdeep_adventures/altbier_vtt_data/vtt_data
+        source: /home/bagodicks/Documents/altbier_vtt_data/vtt_data
+        # source: /c/Users/richa/OneDrive/games/waterdeep_adventures/altbier_vtt_data/vtt_data
         target: /data
       # - type: bind
       #   source: /c/Users/richa/OneDrive/games/waterdeep_adventures/altbier_vtt_data/backup
